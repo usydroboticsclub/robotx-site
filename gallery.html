@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery - USYD RowBot</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style_gallery.css">
+
+
+</head>
+<body>
+    
+    <div class="container">
+
+        
+        <div id="header">
+
+            <div class="homepage">
+                <button class="dropbtn">
+                    <a href="index">USYD RowBot</a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="contact">Contact</a>
+                </button>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="gallery"><h4>Gallery</h4></a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="projects">Projects</a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="aboutus">About Us</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="aboutus">About Us</a>
+                    <a href="theTeam">The Team</a>
+                    <a href="acfrMentors">ACFR Mentors</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="index">Home</a>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="title" id="title"> 
+        
+            <img class="image" src="images/gallery_title.jpg" alt="">
+            <h1>Gallery</h1>
+        </div>
+
+
+        <div id="title1">
+            <h1>
+                What we've been up to
+            </h1>
+
+        </div>
+
+        <div id="title2">
+            <p>
+                Follow our adventures on our Instagram <a href="https://www.instagram.com/usydrowbot/" target="_blank"><b>@UsydRowBot</b></a> as we work our way towards maritime domination.
+            </p>
+
+        </div>
+
+
+
+
+
+
+
+        
+        <div id="gallery" class="row">
+            <div class="column">
+                <img src="images/31894912751_a69f7c7464_z.jpg" alt="Nature" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+                <img src="images/aboutus.jpg" alt="Snow" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+                <img src="images/ACFR_RGB_300T.png" alt="Mountains" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+                <img src="images/gallery_title.jpg" alt="Lights" onclick="myFunction(this);">
+            </div>
+        </div>
+        
+        
+        <div id="imExpand" class="imExpand">
+            <!-- Close the image -->
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        
+            <!-- Expanded image -->
+            <img id="expandedImg" style="width:100%">
+        
+            <!-- Image text -->
+            <div id="imgtext"></div>
+        </div>
+
+
+        
+
+
+
+    </div>
+
+    <div id="footer">
+        
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><b>&copy; USYD RowBot 2020</b></li>
+        </ul>
+    </div>
+
+    <script src="js/gallery.js" charset="utf-8"></script>
+
+</body>
+</html>

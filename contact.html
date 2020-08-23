@@ -1,0 +1,236 @@
+<?php
+/*
+ * ================
+ * Error reporting.
+ * ================
+ */
+error_reporting(E_ALL);
+ini_set('display_errors', 0); // SET IT TO 0 ON A LIVE SERVER !!!
+
+/*
+ * ==================================================================
+ * Execute operations upon form submit (store form data in date.csv).
+ * ==================================================================
+ */
+include 'php/create-csv.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact - USYD RowBot</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style_contact.css">
+
+
+</head>
+<body>
+    
+    <div class="container">
+
+        
+        <div id="header">
+
+            <div class="homepage">
+                <button class="dropbtn">
+                    <a href="index">USYD RowBot</a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="contact"><h4>Contact</h4></a>
+                </button>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="gallery">Gallery</a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="projects">Projects</a>
+                </button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="aboutus">About Us</a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="aboutus">About Us</a>
+                    <a href="theTeam">The Team</a>
+                    <a href="acfrMentors">ACFR Mentors</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="index">Home</a>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="title" id="title"> 
+        
+            <img class="image" src="images/contact_title.jpg" alt="">
+            <h1>Contact Us</h1>
+        </div>
+
+        <button id="sponsorBtn" class="dropbtn"><a href="http://bit.ly/RowBotInfo" target="_blank"><bold>Sponsorship Info Pack</bold></a ></button>
+
+
+        <div id="intro">
+            <h1>
+                Contact
+            </h1>
+            <br>
+            <p>
+                To get in contact with the team, please use the form below and we'll get back to you as quickly as possible.
+            </p>
+
+        </div>
+
+        <div id="form" class="formContainer">
+            <form action="php/create-csv.php" method="post">
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="fname" placeholder="Your first name..">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lname" placeholder="Your last name..">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="email" name="email" placeholder="youremail@address.com">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="org">Organisation</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="org" name="org" placeholder="Organisation Name">
+                    </div>
+                </div>
+                
+                <!-- <div class="row">
+                    <div class="col-25">
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="country" name="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                </div> -->
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Message</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <input type="submit" value="Submit" name="submit" id="submit">
+                </div>
+            </form>
+        </div>
+
+
+
+        <div id="locationText">
+            <h1>
+                Come Visit Us!
+            </h1>
+            <br>
+            <p>
+                If you're interested in partnering with our team, please contact us and we can arrange for you to come and meet the students and see what we're working on.
+            </p>
+            <br>
+            <p>
+                You can find us in the Engineering Precinct of the Darlington Campus of The University of Sydney. 
+            </p>
+            <br>
+            <p>
+                Limited parking is available, otherwise from Redfern Station we're approximately an 800m walk. Please refer to the
+                Australian Centre for Field Robotics' directions for details.
+            </p>
+
+            
+        </div>
+
+        <div id="locationMap">
+            <!-- <h3>My Google Maps Demo</h3> -->
+            <!--The div element for the map -->
+            <div id="map"></div>
+            <script>
+                // Initialize and add the map
+                function initMap() {
+                    // The location of Uluru
+                    var uluru = { lat: -25.344, lng: 131.036 };
+                    // The map, centered at Uluru
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), { zoom: 4, center: uluru });
+                    // The marker, positioned at Uluru
+                    var marker = new google.maps.Marker({ position: uluru, map: map });
+                }
+            </script>
+            <!--Load the API from the specified URL
+                    * The async attribute allows the browser to render the page while the API loads
+                    * The key parameter will contain your own API key (which is not needed for this tutorial)
+                    * The callback parameter executes the initMap() function
+                    -->
+            <script async defer src="https://www.google.com/maps?sll=-33.888584,151.187347&q=University+of+Sydney+Camperdown,+NSW,+2076,+Australia&z=13">
+            </script>
+        
+        </div>
+        
+
+
+        
+
+
+
+    </div>
+
+    <div id="footer">
+        
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><b>&copy; USYD RowBot 2020</b></li>
+        </ul>
+    </div>
+
+    <script src="java/gallery.js" charset="utf-8"></script>
+
+</body>
+</html>
